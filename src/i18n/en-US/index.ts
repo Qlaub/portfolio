@@ -12,6 +12,6 @@ export default {
   },
   contact: {
     header: "Contact me",
-    body: "Reach out below or email me at <b>e.pirazzi@gmail.com</b>",
+    body: 'Reach out below or email me at <b>{email}</b>',
   }
 };

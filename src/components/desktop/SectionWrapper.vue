@@ -14,22 +14,12 @@ const isShort = computed(() => {
 });
 
 const wrapperClasses = computed(() => {
-  const baseClasses = 'scroll-snap-center';
+  const baseClasses = 'scroll-snap-center column items-center justify-center';
 
-  return `${baseClasses} ${isShort.value ? 'desktop-short' : 'desktop-normal'}`;
+  return `${baseClasses} ${isShort.value ? 'desktop-height-short' : 'desktop-height-regular'}`;
 });
 </script>
 <style scoped>
-.desktop-short {
-  height: 650px;
-}
-.desktop-normal {
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 .scroll-snap-center {
   scroll-snap-align: center;
 }
