@@ -1,4 +1,4 @@
 <template>
-  <div>navbar for desktop</div>
+  <div class="fixed-top-left">navbar for desktop</div>
 </template>
 <script setup lang="ts"></script>

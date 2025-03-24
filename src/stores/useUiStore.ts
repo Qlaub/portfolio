@@ -12,7 +12,7 @@ export const useUiStore = defineStore('ui', () => {
     isMobile.value = window.innerWidth < 768;
   }
 
-  return { windowWidth, isMobile, updateUiStore };
+  return { windowWidth, windowHeight, isMobile, updateUiStore };
 });
 
 if (import.meta.hot) {
