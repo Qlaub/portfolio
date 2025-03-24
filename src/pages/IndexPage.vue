@@ -1,6 +1,6 @@
 <template>
-  <MobileIndex v-if="uiStore.isMobile">Hello world from mobile</MobileIndex>
-  <DesktopIndex v-else>Hello world from desktop</DesktopIndex>
+  <MobileIndex v-if="uiStore.isMobile"></MobileIndex>
+  <DesktopIndex v-else></DesktopIndex>
 </template>
 <script setup lang="ts">
 import DesktopIndex from './DesktopIndex.vue';

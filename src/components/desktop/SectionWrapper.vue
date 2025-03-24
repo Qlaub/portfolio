@@ -1,5 +1,5 @@
 <template>
-  <div :class="wrapperClass">
+  <div :class="wrapperClasses">
     <slot />
   </div>
 </template>
@@ -13,11 +13,11 @@ const isShort = computed(() => {
   return uiStore.windowHeight <= 690;
 });
 
-const wrapperClass = computed(() => {
-  return isShort.value ?
-    'desktop-short' :
-    'desktop-normal'
-})
+const wrapperClasses = computed(() => {
+  const baseClasses = 'scroll-snap-center';
+
+  return `${baseClasses} ${isShort.value ? 'desktop-short' : 'desktop-normal'}`;
+});
 </script>
 <style scoped>
 .desktop-short {
@@ -29,5 +29,8 @@ const wrapperClass = computed(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.scroll-snap-center {
+  scroll-snap-align: center;
 }
 </style>
