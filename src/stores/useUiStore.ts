@@ -3,10 +3,12 @@ import { ref } from 'vue';
 
 export const useUiStore = defineStore('ui', () => {
   const windowWidth = ref(window.innerWidth);
+  const windowHeight = ref(window.innerHeight);
   const isMobile = ref(window.innerWidth < 768);
 
   function updateUiStore() {
     windowWidth.value = window.innerWidth;
+    windowHeight.value = window.innerHeight;
     isMobile.value = window.innerWidth < 768;
   }
 
