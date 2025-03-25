@@ -1,5 +1,5 @@
 <template>
-  <div>Work section</div>
+  <h2 class="section-header" id="work-header" data-section="work">Work section</h2>
 </template>
 <script setup lang="ts">
 </script>

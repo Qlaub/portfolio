@@ -4,3 +4,11 @@
 .desktop-height-regular {
   height: 100dvh;
 }
+// bg-primary and bg-secondary works out of the box
+// based on my variables set up in quasar.variables.scss
+.bg-tertiary {
+  background-color: $tertiary;
+}
+.bg-quaternary {
+  background-color: $quaternary;
+}
