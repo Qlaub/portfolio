@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?Roboto:wght@900&family=Amatic+SC:wght@700&family=Work+Sans:wght@400;600&display=swap');
+
+h2,
+h3,
+h4 {
+  font-family: 'Roboto', sans-serif;
+}
+
+p,
+a,
+div {
+  font-family: 'Work Sans', sans-serif;
+}
+
 .desktop-height-short {
   height: 650px;
 }
@@ -9,6 +23,39 @@
 .bg-tertiary {
   background-color: $tertiary;
 }
+.text-tertiary {
+  color: $tertiary;
+}
 .bg-quaternary {
   background-color: $quaternary;
+}
+.text-quaternary {
+  color: $quaternary;
+}
+.hover-bg-primary:hover {
+  background-color: $primary;
+}
+.hover-bg-secondary:hover {
+  background-color: $secondary;
+}
+.hover-bg-tertiary:hover {
+  background-color: $tertiary;
+}
+.hover-bg-quaternary:hover {
+  background-color: $quaternary;
+}
+.hover-text-primary:hover {
+  color: $primary;
+}
+.hover-text-secondary:hover {
+  color: $secondary;
+}
+.hover-text-tertiary:hover {
+  color: $tertiary;
+}
+.hover-text-quaternary:hover {
+  color: $quaternary;
+}
+.border-quaternary-xs {
+  box-shadow: 0 0 0 0.25px $quaternary;
 }

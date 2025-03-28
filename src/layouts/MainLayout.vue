@@ -1,6 +1,6 @@
 <template>
   <MobileNavBar v-if="uiStore.isMobile"></MobileNavBar>
-  <DesktopNavBar v-else></DesktopNavBar>
+  <HeaderDesktop v-else></HeaderDesktop>
   <ReactiveBackground> </ReactiveBackground>
   <router-view></router-view>
   <MobileFooterBar v-if="uiStore.isMobile"></MobileFooterBar>
@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import DesktopNavBar from 'src/components/desktop/NavBar.vue';
+import HeaderDesktop from 'src/components/desktop/HeaderDesktop.vue';
 import MobileNavBar from 'src/components/mobile/NavBar.vue';
 import DesktopFooterBar from 'src/components/desktop/FooterBar.vue';
 import MobileFooterBar from 'src/components/mobile/FooterBar.vue';
@@ -17,7 +17,9 @@ import { useUiStore } from 'src/stores/useUiStore';
 import { useSectionStore } from 'src/stores/useSectionStore';
 import { onMounted } from 'vue';
 import type { Section } from 'src/types/section';
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
 const uiStore = useUiStore();
 const sectionStore = useSectionStore();
 
@@ -25,7 +27,7 @@ onMounted(() => {
   const options = {
     root: document.querySelector('#q-app'),
     rootMargin: '0px',
-    threshold: 1.0,
+    threshold: 0.6,
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -33,7 +35,10 @@ onMounted(() => {
       if (entry.isIntersecting) {
         const section = entry.target.getAttribute('data-section');
         if (section) {
-          sectionStore.updateCurrentSection(section as Section);
+          const localePrefix =
+            typeof route.params.locale === 'string' ? `${route.params.locale}` : '';
+          const newPath = `${localePrefix}/${section}`;
+          sectionStore.updateCurrentSection(section as Section, newPath);
         }
       }
     });

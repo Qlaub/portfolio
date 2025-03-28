@@ -23,10 +23,23 @@ const supportedLocales: MessageLanguages[] = ['en-US', 'es-US'];
 export default defineRouter(function (/* { store, ssrContext } */) {
   const createHistory = process.env.SERVER
     ? createMemoryHistory
-    : (process.env.VUE_ROUTER_MODE === 'history' ? createWebHistory : createWebHashHistory);
+    : process.env.VUE_ROUTER_MODE === 'history'
+      ? createWebHistory
+      : createWebHashHistory;
 
   const Router = createRouter({
-    scrollBehavior: () => ({ left: 0, top: 0 }),
+    scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition;
+      }
+      if (to.hash) {
+        return {
+          el: to.hash,
+          behavior: 'smooth',
+        };
+      }
+      return { top: 0 };
+    },
     routes,
 
     // Leave this as is and make changes in quasar.conf.js instead!

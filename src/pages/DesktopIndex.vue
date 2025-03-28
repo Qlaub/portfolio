@@ -1,19 +1,19 @@
 <template>
   <div :class="containerClasses">
     <SectionWrapper>
-      <HomeSection></HomeSection>
+      <HomeSection id="home"></HomeSection>
     </SectionWrapper>
     <SectionWrapper>
-      <AboutSection></AboutSection>
+      <AboutSection id="about"></AboutSection>
     </SectionWrapper>
     <SectionWrapper>
-      <WorkSection></WorkSection>
+      <WorkSection id="work"></WorkSection>
     </SectionWrapper>
     <SectionWrapper>
-      <ContactSection></ContactSection>
+      <ContactSection id="contact"></ContactSection>
     </SectionWrapper>
     <SectionWrapper>
-      <ResumeSection></ResumeSection>
+      <ResumeSection id="resume"></ResumeSection>
     </SectionWrapper>
   </div>
 </template>
